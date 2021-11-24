@@ -28,7 +28,12 @@
     "serve.rest-api": "nx serve rest-api",
     "serve.platform": "nx serve web-platform",
     "serve.dev": "nx run-many --target=serve --projects=web-platform,rest-api --parallel",
-    "serve.prod": "nx run-many --target=serve --projects=web-platform,rest-api --parallel --configuration=production"
+    "serve.prod": "nx run-many --target=serve --projects=web-platform,rest-api --parallel --configuration=production",
+    "release:major": "nx run workspace:version --releaseAs=major",
+    "release:minor": "nx run workspace:version --releaseAs=minor",
+    "release:patch": "nx run workspace:version --releaseAs=patch",
+    "release:pre:alpha": "nx run workspace:version --releaseAs=prerelease --preid=alpha",
+    "release:pre:beta": "nx run workspace:version --releaseAs=prerelease --preid=beta"
   },
   "private": true,
   "devDependencies": {
