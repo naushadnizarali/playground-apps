@@ -1,0 +1,98 @@
+{
+  "projectType": "application",
+  "root": "apps/web-platform",
+  "sourceRoot": "apps/web-platform/src",
+  "prefix": "web-platform",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/web-platform",
+        "index": "apps/web-platform/src/index.html",
+        "main": "apps/web-platform/src/main.ts",
+        "polyfills": "apps/web-platform/src/polyfills.ts",
+        "tsConfig": "apps/web-platform/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/web-platform/src/favicon.ico",
+          "apps/web-platform/src/assets"
+        ],
+        "styles": ["apps/web-platform/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/web-platform/src/environments/environment.ts",
+              "with": "apps/web-platform/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "web-platform:build:production"
+        },
+        "development": {
+          "browserTarget": "web-platform:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 4301,
+        "proxyConfig": "apps/web-platform/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "web-platform:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/web-platform/src/**/*.ts",
+          "apps/web-platform/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/web-platform"],
+      "options": {
+        "jestConfig": "apps/web-platform/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
