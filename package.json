@@ -9,7 +9,9 @@
   },
   "private": true,
   "devDependencies": {
+    "@nrwl/angular": "^13.2.2",
     "@nrwl/cli": "13.2.1",
+    "@nrwl/nest": "^13.2.2",
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.2.1",
     "@nrwl/workspace": "13.2.1",
