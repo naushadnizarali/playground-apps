@@ -3,6 +3,17 @@
   "projects": {
     "rest-api": "apps/rest-api",
     "web-platform": "apps/web-platform",
-    "web-platform-e2e": "apps/web-platform-e2e"
+    "web-platform-e2e": "apps/web-platform-e2e",
+    "workspace": {
+      "root": ".",
+      "targets": {
+        "version": {
+          "executor": "@jscutlery/semver:version",
+          "options": {
+            "syncVersions": true
+          }
+        }
+      }
+    }
   }
 }
