@@ -2,6 +2,10 @@
 
 This file was generated using [@jscutlery/semver](https://github.com/jscutlery/semver).
 
+# [1.0.0](https://github.com/naushadnizarali/playground-apps/compare/v0.1.0...v1.0.0) (2021-11-25)
+
+
+
 # [0.1.0](https://github.com/naushadnizarali/playground-apps/compare/v0.0.2-alpha.1...v0.1.0) (2021-11-24)
 
 
